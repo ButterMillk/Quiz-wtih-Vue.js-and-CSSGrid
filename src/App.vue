@@ -1,28 +1,50 @@
 <template>
   <div id="app">
-      <hr />
+
       <div class="navigation">
         <h1>Pseudo-Milionerzy</h1>
       </div>
-      <hr />
 
-      <div class="container">
+      <div class="info">
         <Informations :gamer="gamer" />
+      </div>
+
+      <div class="question">
         <Question :textQuestion="Questions[game].question" /> 
+      </div>
+
+      <div class="answer-1">
           <Answer :textAnswer="Questions[game].answers[0]" 
                   @selectAnswer="updateData($event)"/>
+      </div>
+
+      <div class="answer-2">
           <Answer :textAnswer="Questions[game].answers[1]" 
                   @selectAnswer="updateData($event)"/>
+      </div>
+
+      <div class="answer-3">
           <Answer :textAnswer="Questions[game].answers[2]" 
                   @selectAnswer="updateData($event)"/>
+      </div>
+
+      <div class="answer-4">
           <Answer :textAnswer="Questions[game].answers[3]" 
                   @selectAnswer="updateData($event)"/> 
       </div>
-      <hr />
-      <div class="control">
+
+      <div class="nextRound">
         <button>Następna runda</button>
+      </div>
+
+      <div class="endGame">
         <button @click="this.endGame">Koniec gry</button>
       </div>
+
+      <div class="footer">
+        <p>Dzięki</p>
+      </div>
+    
   </div>
 </template>
 
@@ -91,9 +113,6 @@ export default {
   },
 
   methods:{
-    // showText(){
-    //   console.log("Tekst do propsowania: " + this.Questions[this.game].question);
-    // },
 
     endGame(){
       
@@ -127,19 +146,64 @@ export default {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(12, 1fr);
 }
 
 .navigation{
   text-align: center;
+  grid-column: 1/ 9;
+  grid-row: 1/ 4;
 }
 
-.container{
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+.info{
+  grid-column: 6/ 9;
+  grid-row: 4/ 6;
 }
 
-.control{
+.question{
+  grid-column: 2/ 8;
+  grid-row:   6/ 9;
+}
+
+.answer-1{
+  grid-column: 1/ 3;
+  grid-row:   9/ 11;
+}
+
+.answer-2{
+  grid-column: 3/ 5;
+  grid-row:   9/ 11;
+}
+
+.answer-3{
+  grid-column: 5/ 7;
+  grid-row:   9/ 11;
+}
+
+.answer-4{
+  grid-column: 7/ 9;
+  grid-row:   9/ 11;
+}
+
+.nextRound{
+  grid-column: 3/ 5;
+  grid-row:   11/ 12;
+  text-align: center;
+}
+
+.endGame{
+  grid-column: 5/ 7;
+  grid-row:   11/ 12;
+  text-align: center;
+}
+
+.footer{
+  grid-column: 1/ 9;
+  grid-row:   12/ 13;
   text-align: center;
 }
 

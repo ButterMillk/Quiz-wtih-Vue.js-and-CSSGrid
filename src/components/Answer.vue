@@ -1,7 +1,6 @@
 <template>
     <div class="wrapperAnswer" @click="selectAnswer">
         <p>{{ textAnswer.answer }}</p>
-        
     </div>
 </template>
 
