@@ -13,22 +13,22 @@
         <Question :textQuestion="Questions[game].question" /> 
       </div>
 
-      <div class="answer-1">
+      <div class="answer answer-1">
           <Answer :textAnswer="Questions[game].answers[0]" 
                   @selectAnswer="updateData($event)"/>
       </div>
 
-      <div class="answer-2">
+      <div class="answer answer-2">
           <Answer :textAnswer="Questions[game].answers[1]" 
                   @selectAnswer="updateData($event)"/>
       </div>
 
-      <div class="answer-3">
+      <div class="answer answer-3">
           <Answer :textAnswer="Questions[game].answers[2]" 
                   @selectAnswer="updateData($event)"/>
       </div>
 
-      <div class="answer-4">
+      <div class="answer answer-4">
           <Answer :textAnswer="Questions[game].answers[3]" 
                   @selectAnswer="updateData($event)"/> 
       </div>
@@ -53,6 +53,7 @@
 import Question from './components/Question.vue';
 import Informations from './components/Informations.vue';
 import Answer from './components/Answer.vue';
+import { setTimeout } from 'timers';
 
 export default {
   name: 'App',
@@ -126,14 +127,16 @@ export default {
     },
 
     updateData(updatedObject){
-      this.gamer.score += updatedObject.score;
-      this.gamer.opportunities += updatedObject.opportunities;
-      this.game++;
-      if(this.game >= this.Questions.length){
-        alert("Przepraszamy ale nie mamy więcej pytań - dodamy je wkrótce ;)");
-        this.endGameDetails();
-        this.endGame();
-      }
+      setTimeout(() => {
+        this.gamer.score += updatedObject.score;
+        this.gamer.opportunities += updatedObject.opportunities;
+        this.game++;
+        if(this.game >= this.Questions.length){
+          alert("Przepraszamy ale nie mamy więcej pytań - dodamy je wkrótce ;)");
+          this.endGameDetails();
+          this.endGame();
+        }
+      }, 2000)
     }
     
   },
@@ -167,6 +170,15 @@ export default {
 .question{
   grid-column: 2/ 8;
   grid-row:   6/ 9;
+}
+
+.answer{
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  background-color: #FFFF99;
+  text-align: center;
+  cursor: pointer;
 }
 
 .answer-1{

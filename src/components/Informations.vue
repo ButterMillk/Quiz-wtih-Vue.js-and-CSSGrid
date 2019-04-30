@@ -18,7 +18,6 @@ export default {
 <style scoped>
 .wrapperInformations{
     box-sizing: border-box;
-    
     padding: 10px;
 }
 

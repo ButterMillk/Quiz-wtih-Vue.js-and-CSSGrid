@@ -1,6 +1,6 @@
 <template>
     <div class="wrapperQuestion">
-        <p>{{textQuestion}}</p>
+        <h2>{{textQuestion}}</h2>
     </div>
 </template>
 
@@ -16,8 +16,16 @@ export default {
 
 <style scoped>
 .wrapperQuestion{
+   
+    display: table;
     box-sizing: border-box;
+    width: 100%;
+    height: 100%;
     text-align: center;
+}
+h2{
+    display: table-cell;
+    vertical-align: middle;
 }
 
 </style>
