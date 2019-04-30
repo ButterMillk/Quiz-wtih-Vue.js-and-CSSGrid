@@ -1,6 +1,6 @@
 <template>
     <div class="wrapperQuestion">
-        <p >Tutaj jest pytanie: {{textQuestion}}</p>
+        <p>{{textQuestion}}</p>
     </div>
 </template>
 
