@@ -34,11 +34,11 @@
       </div>
 
       <div class="nextRound">
-        <button>Następna runda</button>
+        <button class="nextRound_button">Następna runda</button>
       </div>
 
       <div class="endGame">
-        <button @click="this.endGame">Koniec gry</button>
+        <button class="endGame__button" @click="this.endGame">Koniec gry</button>
       </div>
 
       <div class="footer">
@@ -154,6 +154,13 @@ export default {
   height: 100vh;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(12, 1fr);
+  background-image: url(img/background.jpg);
+  opacity: 0.1 blue;
+  -webkit-filter: saturate(150%);
+  -moz-filter: saturate(150%);
+  -o-filter: saturate(150%);
+  -ms-filter: saturate(150%);
+  filter: saturate(150%);
 }
 
 .navigation{
@@ -165,11 +172,17 @@ export default {
 .info{
   grid-column: 6/ 9;
   grid-row: 4/ 6;
+  background-color: aliceblue;
+  opacity: 0.8;
+  text-align: center;
 }
 
 .question{
   grid-column: 2/ 8;
   grid-row:   6/ 9;
+  background-color: aliceblue;
+  opacity: 0.8;
+  text-align: center;
 }
 
 .answer{
@@ -179,8 +192,13 @@ export default {
   background-color: #FFFF99;
   text-align: center;
   cursor: pointer;
+  font-size: 1em;
 }
 
+.answer:hover{
+  background-color: rgb(255, 242, 59);
+  font-size: 2em;
+}
 .answer-1{
   grid-column: 1/ 3;
   grid-row:   9/ 11;
@@ -205,18 +223,40 @@ export default {
   grid-column: 3/ 5;
   grid-row:   11/ 12;
   text-align: center;
+  border: none;
+  padding-top: 10px;
 }
 
 .endGame{
   grid-column: 5/ 7;
   grid-row:   11/ 12;
   text-align: center;
+  padding-top: 10px;
+  
+}
+
+.nextRound_button{
+  width: 75%;
+  height: 50%;
+  border: none;
+  background-color: green;
+  opacity: 0.9;
+}
+
+.endGame__button{
+  width: 75%;
+  height: 50%;
+  border: none;
+  background-color: red;
+  opacity: 0.9;
 }
 
 .footer{
   grid-column: 1/ 9;
   grid-row:   12/ 13;
   text-align: center;
+  background-color: aliceblue;
+  opacity: 0.8;
 }
 
 

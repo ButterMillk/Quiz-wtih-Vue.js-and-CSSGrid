@@ -36,10 +36,11 @@ export default {
             this.selectedAnswer.opportunities = 0;
             if(this.textAnswer.truth){
                 this.selectedAnswer.score = 100;
-                
+                alert("Poprawna odpowiedź!");
             }
             else{
                 this.selectedAnswer.opportunities = -1;
+                alert("Błędna odpowiedź!");
             }
 
             this.$emit('selectAnswer', this.selectedAnswer);          
