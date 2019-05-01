@@ -33,10 +33,6 @@
                   @selectAnswer="updateData($event)"/> 
       </div>
 
-      <div class="nextRound">
-        <button class="nextRound_button">Następna runda</button>
-      </div>
-
       <div class="endGame">
         <button class="endGame__button" @click="this.endGame">Koniec gry</button>
       </div>
@@ -68,6 +64,7 @@ export default {
       gamer: {
         score: 0,
         opportunities: 3,
+        question: [],
       },
 
       Questions: [
@@ -120,6 +117,7 @@ export default {
 
     endGame(){
       
+      alert("Zdobyłeś: " + this.gamer.score + " punktów");
       this.gamer.score = 0;
       this.gamer.opportunities = 3;
       this.game = 0;
@@ -140,8 +138,11 @@ export default {
           this.endGame();
         }
       }, 500)
-    }
+    },
     
+    randomQuestion(){
+
+    }
   },
 }
 </script>
@@ -157,7 +158,8 @@ export default {
   height: 100vh;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(12, 1fr);
-  background-color: aliceblue;
+ /* background-color: aliceblue; */
+ background-color: rgba(0, 194, 224, 1);
   opacity: 0.1 blue;
   -webkit-filter: saturate(150%);
   -moz-filter: saturate(150%);
@@ -170,14 +172,14 @@ export default {
   text-align: center;
   grid-column: 1/ 9;
   grid-row: 1/ 3;
-  background-color: aliceblue;
+  background-color: rgba(0, 194, 224, 1);
   opacity: 0.8;
 }
 
 .info{
   grid-column: 6/ 9;
   grid-row: 3/ 5;
-  background-color: aliceblue;
+   background-color: rgba(0, 194, 224, 1);
   opacity: 0.8;
   text-align: center;
 }
@@ -185,7 +187,7 @@ export default {
 .question{
   grid-column: 2/ 8;
   grid-row:   5/ 8;
-  background-color: aliceblue;
+  background-color: rgba(0, 194, 224, 1);
   opacity: 0.8;
   text-align: center;
 }
@@ -229,35 +231,12 @@ export default {
   grid-row:   8/ 10;
 }
 
-.nextRound{
-  grid-column: 3/ 5;
-  grid-row:   10/ 12;
-  text-align: center;
-  border: none;
-  padding-top: 10px;
-}
-
 .endGame{
-  grid-column: 5/ 7;
+  grid-column: 4/ 6;
   grid-row:   10/ 12;
   text-align: center;
   padding-top: 10px;
   
-}
-
-.nextRound_button{
-  width: 75%;
-  height: 50%;
-  border: none;
-  background-color: rgba(0, 255, 0, 0.6);
-  opacity: 0.9;
-  font-size: 1.5em;
-  font-weight: bold;
-}
-
-.nextRound_button:hover{
-  background-color: rgba(0, 142, 19, 1);
-  transition: 0.5s;
 }
 
 .endGame__button{
@@ -281,7 +260,7 @@ export default {
   grid-column: 1/ 9;
   grid-row:   12/ 13;
   text-align: center;
-  background-color: aliceblue;
+  background-color: rgba(0, 194, 224, 1);
   opacity: 0.8;
   
 }
