@@ -64,7 +64,7 @@ export default {
       gamer: {
         score: 0,
         opportunities: 3,
-        question: [],
+        
       },
 
       Questions: [
@@ -131,7 +131,9 @@ export default {
       setTimeout(() => {
         this.gamer.score += updatedObject.score;
         this.gamer.opportunities += updatedObject.opportunities;
+        //this.game = this.randomQuestion();
         this.game++;
+        
         if(this.game >= this.Questions.length){
           alert("Przepraszamy ale nie mamy więcej pytań - dodamy je wkrótce ;)");
           this.endGameDetails();
@@ -139,10 +141,27 @@ export default {
         }
       }, 500)
     },
-    
-    randomQuestion(){
 
-    }
+    initializeIndexQuestionTab(){
+
+      
+    },
+    
+    // randomQuestion(){
+
+    //   var randomNumber = Math.floor(Math.random()*this.Questions.length);
+
+    //   for(let i = 0; i < this.indexQuestion.length(); i++){
+
+    //       while(randomNumber == this.indexQuestion[i]){
+    //         randomNumber = Math.floor(Math.random()*this.Questions.length);
+    //       }
+
+    //   }
+
+    //   return randomNumber;
+    
+    // },
   },
 }
 </script>
