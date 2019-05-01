@@ -2,7 +2,7 @@
   <div id="app">
 
       <div class="navigation">
-        <h1>Pseudo-Milionerzy</h1>
+        <h1>Sprawdź swoją wiedzę!</h1>
       </div>
 
       <div class="info">
@@ -42,7 +42,10 @@
       </div>
 
       <div class="footer">
-        <p>Dzięki</p>
+        <p>Projekt i implementacja: <a class="footer__a" href="http://www.buttermilk.pl/">Mariusz Maślanka</a>
+          <br />
+           Odwiedź moją stronę <a class="footer__a" href="http://www.buttermilk.pl/">Buttermilk</a>
+        </p>
       </div>
     
   </div>
@@ -136,7 +139,7 @@ export default {
           this.endGameDetails();
           this.endGame();
         }
-      }, 2000)
+      }, 500)
     }
     
   },
@@ -154,7 +157,7 @@ export default {
   height: 100vh;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(12, 1fr);
-  background-image: url(img/background.jpg);
+  background-color: aliceblue;
   opacity: 0.1 blue;
   -webkit-filter: saturate(150%);
   -moz-filter: saturate(150%);
@@ -166,12 +169,14 @@ export default {
 .navigation{
   text-align: center;
   grid-column: 1/ 9;
-  grid-row: 1/ 4;
+  grid-row: 1/ 3;
+  background-color: aliceblue;
+  opacity: 0.8;
 }
 
 .info{
   grid-column: 6/ 9;
-  grid-row: 4/ 6;
+  grid-row: 3/ 5;
   background-color: aliceblue;
   opacity: 0.8;
   text-align: center;
@@ -179,7 +184,7 @@ export default {
 
 .question{
   grid-column: 2/ 8;
-  grid-row:   6/ 9;
+  grid-row:   5/ 8;
   background-color: aliceblue;
   opacity: 0.8;
   text-align: center;
@@ -192,36 +197,41 @@ export default {
   background-color: #FFFF99;
   text-align: center;
   cursor: pointer;
-  font-size: 1em;
+  font-size: 1.5em;
+  border-left: 2px solid blue;
 }
 
 .answer:hover{
-  background-color: rgb(255, 242, 59);
+
+  transition: 0.4s;
+  background-color: #eeff00;
   font-size: 2em;
+  border-left: 20px solid blue;
+  
 }
 .answer-1{
   grid-column: 1/ 3;
-  grid-row:   9/ 11;
+  grid-row:   8/ 10;
 }
 
 .answer-2{
   grid-column: 3/ 5;
-  grid-row:   9/ 11;
+  grid-row:   8/ 10;
 }
 
 .answer-3{
   grid-column: 5/ 7;
-  grid-row:   9/ 11;
+  grid-row:   8/ 10;
 }
 
 .answer-4{
   grid-column: 7/ 9;
-  grid-row:   9/ 11;
+  grid-row:   8/ 10;
 }
 
 .nextRound{
   grid-column: 3/ 5;
-  grid-row:   11/ 12;
+  grid-row:   10/ 12;
   text-align: center;
   border: none;
   padding-top: 10px;
@@ -229,7 +239,7 @@ export default {
 
 .endGame{
   grid-column: 5/ 7;
-  grid-row:   11/ 12;
+  grid-row:   10/ 12;
   text-align: center;
   padding-top: 10px;
   
@@ -239,16 +249,32 @@ export default {
   width: 75%;
   height: 50%;
   border: none;
-  background-color: green;
+  background-color: rgba(0, 255, 0, 0.6);
   opacity: 0.9;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.nextRound_button:hover{
+  background-color: rgba(0, 142, 19, 1);
+  transition: 0.5s;
 }
 
 .endGame__button{
   width: 75%;
   height: 50%;
   border: none;
-  background-color: red;
+  background-color: rgba(255, 0, 0, 0.7);
   opacity: 0.9;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.endGame__button:hover{
+  
+  background-color: rgba(255, 0, 0, 1);
+  transition: 0.5s;
+
 }
 
 .footer{
@@ -257,6 +283,13 @@ export default {
   text-align: center;
   background-color: aliceblue;
   opacity: 0.8;
+  
+}
+
+.footer__a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
 }
 
 
